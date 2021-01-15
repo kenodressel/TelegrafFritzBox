@@ -1,3 +1,5 @@
+from telegraf.client import TelegrafClient
+
 def main():
     setting_keys = [
         "FRITZ_ADDRESS",
