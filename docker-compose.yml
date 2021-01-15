@@ -1,0 +1,13 @@
+version: "3.6"
+services:
+  fritz-metrics:
+    build: .
+    container_name: fritz-metrics
+    environment:
+      - FRITZ_ADDRESS=192.168.1.1
+      - FRITZ_USERNAME=user
+      - FRITZ_PASSWORD=password
+      - TELEGRAF_HOSTNAME=telegraf
+      - TELEGRAF_PORT=8092
+      - SAMPLE_PERIOD=30
+    restart: unless-stopped
