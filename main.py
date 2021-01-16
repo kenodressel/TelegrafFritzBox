@@ -16,19 +16,9 @@ def main():
         raise Exception(f"You need to supply the environment variable(s): {', '.join(missing_keys)}")
     # Extract the settings into a dictionary
     settings = {key: os.environ[key] for key in setting_keys}
-    
-    # Print information about the current configuration
-    print("Current configuration:")
-    for key, value in settings.items():
-        # The still leaks the length of the password to the log but I don't think that really matters
-        censored_value = '*'*len(value) if "PASSWORD" in key else value
-        print(f"\t{key}={censored_value}")
-    print()
 
     # Set the sample period variable
     SAMPLE_PERIOD = float(settings["SAMPLE_PERIOD"])
-    print()
-    print(f"Starting to poll metrics every {SAMPLE_PERIOD} seconds")
 
     start = time.time()
     while True:
