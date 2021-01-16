@@ -5,7 +5,7 @@ import time
 
 def main():
     setting_keys = [
-        "FRITZ_ADDRESS",
+        "FRITZ_IP_ADDRESS",
         "FRITZ_USERNAME",
         "FRITZ_PASSWORD",
         "SAMPLE_PERIOD"
