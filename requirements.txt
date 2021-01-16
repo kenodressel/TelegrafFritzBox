@@ -1,2 +1,1 @@
 fritzconnection==1.4.0
-pytelegraf==0.3.3
